@@ -9,9 +9,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
 </head>
 <body>
+    <header class="bg-dark text-white p-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <h1 class="mb-0">Crew Weather</h1>
+            <div>
+                <div class="btn-group">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Language
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="#" data-lang="en">English</a>
+                        <a class="dropdown-item" href="#" data-lang="es">Spanish</a>
+                        <a class="dropdown-item" href="#" data-lang="fr">French</a>
+                        <a class="dropdown-item" href="#" data-lang="de">German</a>
+                        <a class="dropdown-item" href="#" data-lang="it">Italian</a>
+                        <a class="dropdown-item" href="#" data-lang="pt">Portuguese</a>
+                        <a class="dropdown-item" href="#" data-lang="ru">Russian</a>
+                        <a class="dropdown-item" href="#" data-lang="zh_cn">Chinese Simplified</a>
+                        <a class="dropdown-item" href="#" data-lang="zh_tw">Chinese Traditional</a>
+                        <a class="dropdown-item" href="#" data-lang="ja">Japanese</a>
+                        <a class="dropdown-item" href="#" data-lang="ko">Korean</a>
+                        <!-- Add more languages as needed -->
+                    </div>
+                </div>
+                <button id="settingsButton" class="btn btn-secondary ml-2">Settings</button>
+            </div>
+        </div>
+    </header>
     <div class="container mt-5">
         <div class="card p-4 shadow-lg">
-            <h1 class="text-center mb-4">Weather App</h1>
             <div class="input-group mb-3">
                 <input type="text" id="city" class="form-control" placeholder="Enter city name">
                 <div class="input-group-append">
@@ -22,9 +48,48 @@
             <div id="weatherInfo" class="alert alert-info" style="display: none;"></div>
         </div>
     </div>
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="settingsModalLabel">Settings</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="unitSelect">Temperature Unit</label>
+                        <select class="form-control" id="unitSelect">
+                            <option value="metric">Celsius</option>
+                            <option value="imperial">Fahrenheit</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="windUnitSelect">Wind Speed Unit</label>
+                        <select class="form-control" id="windUnitSelect">
+                            <option value="metric">Kilometers/Hour</option>
+                            <option value="imperial">Miles/Hour</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveSettings">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
+
 
 
