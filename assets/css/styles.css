@@ -1,18 +1,23 @@
 body {
-    background: #f0f0f0;
+    background: #e9ecef;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+
 }
 
-.weather-container {
+#map {
+    width: 100%;
+    height: 600px;
+    border-radius: 8px;
     margin-top: 20px;
 }
 
-.weather-container p {
-    margin: 5px 0;
+.input-group {
+    margin-bottom: 20px;
 }
+
+
