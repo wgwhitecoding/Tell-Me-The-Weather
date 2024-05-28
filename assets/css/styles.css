@@ -1,4 +1,4 @@
-body {
+.body {
     background: #e9ecef;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -18,6 +18,47 @@ body {
 .input-group {
     margin-bottom: 20px;
 }
+
+#feedbackModal .modal-dialog {
+    max-width: 400px;
+}
+
+#feedbackModal .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#feedbackModal #noButton {
+    position: relative;
+}
+
+#feedbackModal #noButton.move {
+    transform: translateX(200%);
+    transition: transform 0.3s ease;
+}
+
+#mostSearchedModal .modal-dialog {
+    max-width: 400px;
+}
+
+#mostSearchedModal .modal-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.searched-location {
+    cursor: pointer;
+}
+
+
+
+
+
+
 
 
 

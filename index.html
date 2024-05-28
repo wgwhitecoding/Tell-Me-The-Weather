@@ -13,26 +13,10 @@
         <div class="container d-flex justify-content-between align-items-center">
             <h1 class="mb-0">Crew Weather</h1>
             <div>
-                <div class="btn-group">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Language
-                    </button>
-                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
-                        <a class="dropdown-item" href="#" data-lang="en">English</a>
-                        <a class="dropdown-item" href="#" data-lang="es">Spanish</a>
-                        <a class="dropdown-item" href="#" data-lang="fr">French</a>
-                        <a class="dropdown-item" href="#" data-lang="de">German</a>
-                        <a class="dropdown-item" href="#" data-lang="it">Italian</a>
-                        <a class="dropdown-item" href="#" data-lang="pt">Portuguese</a>
-                        <a class="dropdown-item" href="#" data-lang="ru">Russian</a>
-                        <a class="dropdown-item" href="#" data-lang="zh_cn">Chinese Simplified</a>
-                        <a class="dropdown-item" href="#" data-lang="zh_tw">Chinese Traditional</a>
-                        <a class="dropdown-item" href="#" data-lang="ja">Japanese</a>
-                        <a class="dropdown-item" href="#" data-lang="ko">Korean</a>
-                        <!-- Add more languages as needed -->
-                    </div>
-                </div>
+                <button id="languageButton" class="btn btn-secondary">Language</button>
                 <button id="settingsButton" class="btn btn-secondary ml-2">Settings</button>
+                <button id="feedbackButton" class="btn btn-secondary ml-2">Feedback</button>
+                <button id="mostSearchedButton" class="btn btn-secondary ml-2">Most Searched</button>
             </div>
         </div>
     </header>
@@ -49,7 +33,7 @@
         </div>
     </div>
 
-    <!-- Settings Modal -->
+                                                     <!-- Settings Modal -->
     <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -70,7 +54,7 @@
                     <div class="form-group">
                         <label for="windUnitSelect">Wind Speed Unit</label>
                         <select class="form-control" id="windUnitSelect">
-                            <option value="metric">Kilometers/Hour</option>
+                            <option value="metric">Meters/Second</option>
                             <option value="imperial">Miles/Hour</option>
                         </select>
                     </div>
@@ -83,6 +67,81 @@
         </div>
     </div>
 
+                                                        <!-- Language Modal -->
+    <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="languageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="languageModalLabel">Select Language</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group">
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="en">English</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="es">Spanish</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="fr">French</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="de">German</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="it">Italian</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="pt">Portuguese</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="ru">Russian</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="zh_cn">Chinese Simplified</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="zh_tw">Chinese Traditional</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="ja">Japanese</button>
+                        <button type="button" class="list-group-item list-group-item-action language-option" data-lang="ko">Korean</button>
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                    <!-- Feedback Modal -->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="feedbackModalLabel">Feedback</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Did you enjoy using our website?</p>
+                    <button id="yesButton" class="btn btn-success mr-2">Yes</button>
+                    <button id="noButton" class="btn btn-danger">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                                                <!-- Most Searched Modal -->
+    <div class="modal fade" id="mostSearchedModal" tabindex="-1" aria-labelledby="mostSearchedModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mostSearchedModalLabel">Most Searched Locations</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group">
+                        <li class="list-group-item searched-location">New York</li>
+                        <li class="list-group-item searched-location">London</li>
+                        <li class="list-group-item searched-location">Tokyo</li>
+                        <li class="list-group-item searched-location">Paris</li>
+                        <li class="list-group-item searched-location">Sydney</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -90,6 +149,14 @@
     <script src="assets/js/script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
